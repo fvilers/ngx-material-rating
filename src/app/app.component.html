@@ -8,7 +8,12 @@
 
   <ng-container *ngFor="let rating of ratings; index as i">
     <div class="rating">
-      <span>Rating {{rating.value}} of {{rating.max}}</span>
+      <span>
+        Rating {{rating.value}} of {{rating.max}}
+        <ng-container *ngIf="rating.disabled">
+          (disabled)
+        </ng-container>
+      </span>
       <ngx-material-rating [color]="rating.color" [disabled]="rating.disabled || false" [(ngModel)]="ratings[i].value"
         [max]="rating.max">
       </ngx-material-rating>
