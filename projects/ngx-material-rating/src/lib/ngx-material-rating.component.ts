@@ -25,6 +25,7 @@ export interface NgxMaterialRatingChange {
 }
 
 type Stars = 'star' | 'star_border';
+
 @Component({
   selector: 'ngx-material-rating',
   exportAs: 'ngxMaterialRating',
