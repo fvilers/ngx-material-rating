@@ -1,0 +1,9 @@
+.dense {
+  margin: 0 0.5rem;
+}
+
+.dense .mat-icon-button {
+  height: 1.5rem;
+  line-height: 1.5rem;
+  width: 1.5rem;
+}

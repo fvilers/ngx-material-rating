@@ -30,6 +30,7 @@ type Stars = 'star' | 'star_border';
   exportAs: 'ngxMaterialRating',
   providers: [NGX_MATERIAL_RATING_VALUE_ACCESSOR],
   templateUrl: './ngx-material-rating.component.html',
+  styleUrls: ['./ngx-material-rating.component.css'],
 })
 export class NgxMaterialRatingComponent implements ControlValueAccessor {
   @Input()
@@ -76,6 +77,15 @@ export class NgxMaterialRatingComponent implements ControlValueAccessor {
     this._disabled = coerceBooleanProperty(value);
   }
   private _disabled: boolean = false;
+
+  @Input()
+  get dense(): boolean {
+    return this._dense;
+  }
+  set dense(value: boolean) {
+    this._dense = coerceBooleanProperty(value);
+  }
+  private _dense: boolean = false;
 
   @Output()
   readonly change: EventEmitter<NgxMaterialRatingChange> = new EventEmitter<NgxMaterialRatingChange>();
