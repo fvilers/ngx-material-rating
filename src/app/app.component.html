@@ -6,10 +6,10 @@
   <h1>Using <code>ngx-material-rating</code></h1>
 
 
-  <ng-container *ngFor="let rating of ratings">
+  <ng-container *ngFor="let rating of ratings; index as i">
     <div class="rating">
       <span>Rating {{rating.value}} of {{rating.max}}</span>
-      <ngx-material-rating [color]="rating.color" [disabled]="rating.disabled || false" [value]="rating.value"
+      <ngx-material-rating [color]="rating.color" [disabled]="rating.disabled || false" [(ngModel)]="ratings[i].value"
         [max]="rating.max">
       </ngx-material-rating>
     </div>
