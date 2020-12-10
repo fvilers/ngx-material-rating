@@ -1,24 +1,51 @@
-# NgxMaterialRating
+# ngx-material-rating
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+A Material Design rating component
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project ngx-material-rating` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-material-rating`.
-> Note: Don't forget to add `--project ngx-material-rating` or else it will be added to the default project in your `angular.json` file. 
+Add the package to your application.
 
-## Build
+```
+npm install --save ngx-material-rating
+```
 
-Run `ng build ngx-material-rating` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Demo
 
-## Publishing
+https://stackblitz.com/edit/ngx-material-rating-demo
 
-After building your library with `ng build ngx-material-rating`, go to the dist folder `cd dist/ngx-material-rating` and run `npm publish`.
+## Getting started
 
-## Running unit tests
+Import the range module to your application module.
 
-Run `ng test ngx-material-rating` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { NgxMaterialRatingModule } from 'ngx-material-rating';
 
-## Further help
+import { AppComponent } from './app.component';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    NgxMaterialRatingModule
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+## Using the component
+
+Add the component to your template and use the provided properties to suit your needs:
+
+- color: one of the valid value of [ThemePalette](https://github.com/angular/components/blob/c4b7604838896daf473f92c4ce4354e425db1148/src/material/core/common-behaviors/color.ts#L30)
+- disabled: to disable the component
+- dense: to have less margin between stars
+- value: the rating value, can be used with `[(ngModel)]`
+- max: the maximum rating value
+
+Check the [demo](https://stackblitz.com/edit/ngx-material-rating-demo) for more examples.
