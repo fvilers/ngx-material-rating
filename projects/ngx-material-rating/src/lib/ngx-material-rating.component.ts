@@ -1,12 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
-  selector: 'lib-ngx-material-rating',
-  template: ` <p>ngx-material-rating works!</p> `,
-  styles: [],
+  selector: 'ngx-material-rating',
+  templateUrl: './ngx-material-rating.component.html',
 })
-export class NgxMaterialRatingComponent implements OnInit {
-  constructor() {}
+export class NgxMaterialRatingComponent {
+  @Input()
+  color: ThemePalette = undefined;
 
-  ngOnInit(): void {}
+  @Input()
+  max: number = 5;
+
+  @Input()
+  value: number = 0;
 }
