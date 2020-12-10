@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 
+type Stars = 'star' | 'star_border';
+
 @Component({
   selector: 'ngx-material-rating',
   templateUrl: './ngx-material-rating.component.html',
@@ -14,4 +16,14 @@ export class NgxMaterialRatingComponent {
 
   @Input()
   value: number = 0;
+
+  getStar(index: number): Stars {
+    const value = this.value || 0;
+
+    if (index < value) {
+      return 'star';
+    }
+
+    return 'star_border';
+  }
 }

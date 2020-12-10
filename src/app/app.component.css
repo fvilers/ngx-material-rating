@@ -1,3 +1,12 @@
 main {
   padding: 1rem;
 }
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating span {
+  width: 7.5rem;
+}
