@@ -5,6 +5,7 @@ type Rating = {
   value: number;
   max: number;
   color?: ThemePalette;
+  disabled?: boolean;
 };
 
 @Component({
@@ -32,6 +33,12 @@ export class AppComponent {
     {
       value: 4,
       max: 5,
+    },
+    {
+      value: 5,
+      max: 10,
+      color: 'primary',
+      disabled: true,
     },
   ];
 }
