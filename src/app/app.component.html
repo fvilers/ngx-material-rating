@@ -15,10 +15,14 @@
         <ng-container *ngIf="rating.dense">
           (dense)
         </ng-container>
+        <ng-container *ngIf="rating.readonly">
+          (readonly)
+        </ng-container>
       </span>
       <div [class.dense]="rating.dense">
         <ngx-material-rating [color]="rating.color" [disabled]="rating.disabled || false"
-          [dense]="rating.dense || false" [(ngModel)]="ratings[i].value" [max]="rating.max">
+          [dense]="rating.dense || false" [readonly]="rating.readonly || false" [(ngModel)]="ratings[i].value"
+          [max]="rating.max">
         </ngx-material-rating>
       </div>
     </div>

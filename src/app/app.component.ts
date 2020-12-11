@@ -7,6 +7,7 @@ type Rating = {
   color?: ThemePalette;
   disabled?: boolean;
   dense?: boolean;
+  readonly?: boolean;
 };
 
 @Component({
@@ -45,6 +46,12 @@ export class AppComponent {
       max: 5,
       color: 'primary',
       dense: true,
+    },
+    {
+      value: 2,
+      max: 5,
+      color: 'accent',
+      readonly: true,
     },
   ];
 }
