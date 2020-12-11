@@ -5,7 +5,6 @@
 <main>
   <h1>Using <code>ngx-material-rating</code></h1>
 
-
   <ng-container *ngFor="let rating of ratings; index as i">
     <div class="rating">
       <span>
@@ -17,9 +16,11 @@
           (dense)
         </ng-container>
       </span>
-      <ngx-material-rating [color]="rating.color" [disabled]="rating.disabled || false" [dense]="rating.dense || false"
-        [(ngModel)]="ratings[i].value" [max]="rating.max">
-      </ngx-material-rating>
+      <div [class.dense]="rating.dense">
+        <ngx-material-rating [color]="rating.color" [disabled]="rating.disabled || false"
+          [dense]="rating.dense || false" [(ngModel)]="ratings[i].value" [max]="rating.max">
+        </ngx-material-rating>
+      </div>
     </div>
   </ng-container>
 </main>
