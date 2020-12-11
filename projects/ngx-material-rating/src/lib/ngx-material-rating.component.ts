@@ -88,6 +88,15 @@ export class NgxMaterialRatingComponent implements ControlValueAccessor {
   }
   private _dense: boolean = false;
 
+  @Input()
+  get readonly(): boolean {
+    return this._readonly;
+  }
+  set readonly(value: boolean) {
+    this._readonly = coerceBooleanProperty(value);
+  }
+  private _readonly: boolean = false;
+
   @Output()
   readonly change: EventEmitter<NgxMaterialRatingChange> = new EventEmitter<NgxMaterialRatingChange>();
   readonly valueChange: EventEmitter<number | null> = new EventEmitter<
@@ -116,7 +125,7 @@ export class NgxMaterialRatingComponent implements ControlValueAccessor {
   }
 
   onClick(index: number) {
-    if (this.disabled) {
+    if (this.disabled || this.readonly) {
       return;
     }
 

@@ -1,5 +1,6 @@
 <ng-container *ngxRange="let index from 0 to max">
-  <button mat-icon-button [class.dense]="dense" [color]="color" [disabled]="disabled" (click)="onClick(index)">
+  <button mat-icon-button [class.dense]="dense" [class.readonly]="readonly" [color]=" color" [disabled]="disabled"
+    [disableRipple]="readonly" (click)="onClick(index)">
     <mat-icon>{{getStar(index)}}</mat-icon>
   </button>
 </ng-container>
