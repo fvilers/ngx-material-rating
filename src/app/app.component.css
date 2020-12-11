@@ -10,3 +10,7 @@ main {
 .rating span {
   width: 10rem;
 }
+
+.dense {
+  margin: 0 0.5rem;
+}
