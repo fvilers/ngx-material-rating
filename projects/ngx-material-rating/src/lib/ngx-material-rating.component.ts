@@ -7,6 +7,7 @@ import {
   Component,
   EventEmitter,
   forwardRef,
+  HostBinding,
   Input,
   Output,
 } from '@angular/core';
@@ -38,6 +39,7 @@ export class NgxMaterialRatingComponent implements ControlValueAccessor {
   color: ThemePalette = undefined;
 
   @Input()
+  @HostBinding( 'style.--rating-max' ) 
   get max(): number {
     return this._max;
   }
